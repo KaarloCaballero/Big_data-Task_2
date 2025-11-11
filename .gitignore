@@ -1,0 +1,14 @@
+/matrices
+.vscode/settings.json
+c_NaiveMatrixMultiplication.exe
+NaiveMatrixMultiplication.class
+rust_NaiveMatrixMultiplication.exe
+naive_matrix/target/release/naive_matrix.exe
+naive_matrix/target/release/naive_matrix.exe
+naive_matrix/target/release/naive_matrix.pdb
+naive_matrix/target/release/naive_matrix.exe
+NotOptimizedBenchmark.class
+NotOptimizedBenchmark$Result.class
+OptimizedBenchmark.class
+OptimizedBenchmark$Result.class
+__pycache__/controller_functions.cpython-313.pyc
