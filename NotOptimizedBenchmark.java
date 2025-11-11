@@ -10,7 +10,7 @@ import java.nio.channels.FileChannel;
 public class NotOptimizedBenchmark {
 
     // --- Configuration ---
-    private static final int[] MATRIX_SIZES = {64, 128, 256, 512, 1024};
+    private static final int[] MATRIX_SIZES = {64, 128, 256, 512, 1024, 2048};
     private static final int[] SPARSE_LEVELS = {0, 50, 75, 90, 95};
     private static final int WARMUP_ITERATIONS = 5;
     private static final String MATRIX_DIRECTORY = "./matrices";
@@ -27,7 +27,9 @@ public class NotOptimizedBenchmark {
                 System.out.printf("[INFO] Starting configuration: Matrix Size = %d, Sparse = %d%%%n", size, sparse);
                 System.out.println("============================================================\n");
 
-                for (int rep = 1; rep <= REPETITIONS; rep++) {
+                int totalIterations = WARMUP_ITERATIONS + REPETITIONS;
+
+                for (int rep = 1; rep <= totalIterations; rep++) {
                     int[][] A = loadMatrixFromBin("A", size, sparse, MATRIX_DIRECTORY);
                     int[][] B = loadMatrixFromBin("B", size, sparse, MATRIX_DIRECTORY);
 
@@ -40,7 +42,7 @@ public class NotOptimizedBenchmark {
                     String timestamp = DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(LocalDateTime.now());
                     String notes = "";
 
-                    // --- Determine if this iteration is a warm-up ---
+                    // Determine if this iteration is a warm-up
                     int warmUp = (rep <= WARMUP_ITERATIONS) ? 1 : 0;
 
                     try {
@@ -66,8 +68,6 @@ public class NotOptimizedBenchmark {
                                 String.valueOf(warmUp),
                                 notes
                         ));
-
-                        System.out.printf("[OK] Run %d completed successfully for size=%d, sparse=%d%%%n", rep, size, sparse);
 
                     } catch (Exception e) {
                         notes = "Error: " + e.getMessage();
@@ -157,7 +157,6 @@ public class NotOptimizedBenchmark {
         File file = new File(path);
         if (!file.exists()) {
             try (PrintWriter writer = new PrintWriter(new FileWriter(file))) {
-                // CSV uses semicolon as separator
                 writer.println(String.join(";", Arrays.asList(
                         "run_id",
                         "matrix_size",
@@ -178,7 +177,6 @@ public class NotOptimizedBenchmark {
 
     private static void appendResultToCsv(String path, List<String> row) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(path, true))) {
-            // CSV uses semicolon as separator
             writer.println(String.join(";", row));
         } catch (IOException e) {
             System.out.println("[ERROR] Error appending to CSV: " + e.getMessage());

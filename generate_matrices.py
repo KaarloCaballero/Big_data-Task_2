@@ -2,7 +2,7 @@ import numpy as np
 import os
 
 # Configuration
-MATRIX_SIZES = [64, 128, 256, 512, 1024]
+MATRIX_SIZES = [64, 128, 256, 512, 1024, 2048]
 SPARSE_LEVELS = [0, 50, 75, 90, 95]
 OUTPUT_DIR = 'matrices'
 SEED = 42 
