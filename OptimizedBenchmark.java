@@ -13,7 +13,7 @@ public class OptimizedBenchmark {
     private static final int WARMUP_ITERATIONS = 5;
     private static final int REPETITIONS = 10;
     private static final String MATRIX_DIRECTORY = "./matrices";
-    private static final String OUTPUT_CSV = "matrix_multiplication_results.csv";
+    private static final String OUTPUT_CSV = "benchmark_raw_results.csv";
 
     private static final int BASE_CASE = 64;
     private static final int BLOCK = 16;
