@@ -18,8 +18,8 @@ import java.util.*;
 public class OptimizedBenchmark {
 
     // --- Configuration ---
-    private static final int[] MATRIX_SIZES = {64}; // {64, 128, 256, 512, 1024}
-    private static final int[] SPARSE_LEVELS = {0, 50}; // {0, 50, 75, 90, 95}
+    private static final int[] MATRIX_SIZES = {64, 128, 256, 512, 1024};
+    private static final int[] SPARSE_LEVELS =  {0, 50, 75, 90, 95};
     private static final int WARMUP_ITERATIONS = 5;
     private static final String MATRIX_DIRECTORY = "./matrices";
     private static final String OUTPUT_CSV = "matrix_multiplication_results.csv";
