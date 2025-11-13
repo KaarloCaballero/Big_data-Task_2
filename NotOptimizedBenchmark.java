@@ -8,8 +8,8 @@ import java.util.*;
 
 public class NotOptimizedBenchmark {
 
-    private static final int[] MATRIX_SIZES = {128, 256}; //{64, 128, 256, 512, 1024, 2048};
-    private static final int[] SPARSE_LEVELS = {0, 50}; //{0, 50, 75, 90, 95};
+    private static final int[] MATRIX_SIZES = {64, 128, 256, 512};
+    private static final int[] SPARSE_LEVELS = {0, 50, 75, 90, 95};
     private static final int WARMUP_ITERATIONS = 5;
     private static final int REPETITIONS = 10;
     private static final String MATRIX_DIRECTORY = "./matrices";
@@ -50,6 +50,11 @@ public class NotOptimizedBenchmark {
 
                     } catch (Exception e) {
                         System.out.printf("[ERROR] %s failed: %s%n", runId, e.getMessage());
+                    }
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e){
+                        System.out.print("Pause was interrupted, continuing...");
                     }
                 }
             }

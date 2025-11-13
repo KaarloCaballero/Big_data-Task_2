@@ -17,3 +17,4 @@ benchmark_out.txt
 benchmark_err.txt
 NotOptimizedBenchmark$SparseMatrix.class
 OptimizedBenchmark$SparseMatrix.class
+NotOptimizedBenchmark$COOEntry.class
