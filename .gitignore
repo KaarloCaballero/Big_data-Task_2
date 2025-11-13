@@ -15,3 +15,5 @@ __pycache__/controller_functions.cpython-313.pyc
 benchmark_cleaned_results.csv
 benchmark_out.txt
 benchmark_err.txt
+NotOptimizedBenchmark$SparseMatrix.class
+OptimizedBenchmark$SparseMatrix.class
