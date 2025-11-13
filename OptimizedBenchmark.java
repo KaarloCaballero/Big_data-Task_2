@@ -8,7 +8,7 @@ import java.util.*;
 
 public class OptimizedBenchmark {
 
-    private static final int[] MATRIX_SIZES = {256, 512};
+    private static final int[] MATRIX_SIZES = {64, 128, 256, 512};
     private static final int[] SPARSE_LEVELS = {0, 50, 75, 90, 95};
     private static final int WARMUP_ITERATIONS = 5;
     private static final int REPETITIONS = 10;
